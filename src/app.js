@@ -1,11 +1,29 @@
-/* eslint-disable */
-import "bootstrap";
-import "./style.css";
+function generarYMostrarExcusa() {
+  let quien = ["Mi hermana", "Mi amigo", "Mi primo", "El fontanero"];
+  let accion = ["perdió", "olvidó", "confundió", "manchó"];
+  let que = ["mis llaves", "mi pasaporte", "la documentación", "mi dinero"];
+  let cuando = [
+    "mientras bailaba",
+    "durante el partido de fútbol",
+    "mientras estaba de viaje",
+    "en medio de una llamada importante",
+    "cuando estaba ocupado con el trabajo"
+  ];
 
-import "./assets/img/rigo-baby.jpg";
-import "./assets/img/4geeks.ico";
+  let indiceQuien = Math.floor(Math.random() * quien.length);
+  let indiceAccion = Math.floor(Math.random() * accion.length);
+  let indiceQue = Math.floor(Math.random() * que.length);
+  let indiceCuando = Math.floor(Math.random() * cuando.length);
 
-window.onload = function() {
-  //write your code here
-  console.log("Hello Rigo from the console!");
-};
+  let excusa =
+    quien[indiceQuien] +
+    " " +
+    accion[indiceAccion] +
+    " " +
+    que[indiceQue] +
+    " " +
+    cuando[indiceCuando] +
+    ".";
+  document.getElementById("excuse").innerHTML = excusa;
+}
+generarYMostrarExcusa();
